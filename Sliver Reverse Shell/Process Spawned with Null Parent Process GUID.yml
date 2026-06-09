@@ -1,0 +1,25 @@
+title: Process Spawned with Null Parent Process GUID
+id: 6e6342a3-83c1-488c-a7b3-919351612a19
+status: experimental
+description: >-
+  Detects a process spawned with a null parent process GUID, indicating
+  deliberate obscuring of process ancestry. Commonly observed in C2 frameworks
+  like Sliver when spawning processes to execute commands.
+references:
+  - 'https://attack.mitre.org/techniques/T1059/003'
+tags:
+  - attack.execution
+  - attack.t1059.003
+  - attack.defense_evasion
+  - attack.t1036
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ParentProcessGuid: '{00000000-0000-0000-0000-000000000000}'
+    Image|endswith: \cmd.exe
+  condition: selection
+falsepositives:
+  - Some legitimate system processes at boot time may have null parent GUIDs
+level: medium

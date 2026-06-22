@@ -1,2 +1,2 @@
-# Sigma-Rules
-Repo for Sigma Rules created in labs
+# Detection-Rules
+Repo for Sigma Rules and scripts created in labs

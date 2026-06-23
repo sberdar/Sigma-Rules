@@ -13,7 +13,7 @@ from scapy.all import rdpcap
 import statistics, argparse
 
 def cli_args():
-    parser = argparse.ArgumentParser(description="Beacon Detection Script. Use with .pcap files.")
+    parser = argparse.ArgumentParser(description="Beacon Detection Script. Use with .pcap files. Install scapy with pip install scapy.")
     parser.add_argument("--local-ip", help="Local machine IP to be excluded from analysis")
     parser.add_argument("-f", "--file", help="Location of file")
     args = parser.parse_args()
